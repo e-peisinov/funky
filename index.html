@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Funky — Bakers, Eatery & Deli in Barcelona</title>
+  <meta name="description" content="Funky Bakers, Funky Eatery and Funky Deli: three addresses in Barcelona to eat, gather and take something home.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600&display=swap">
+  <link rel="stylesheet" href="css/funky.css?v=1">
+  <link rel="preload" as="image" href="assets/img/ig/DQHLSdEjKQG-1.jpg">
+</head>
+<body data-page="home">
+
+<main>
+  <!-- ============ Portada ============ -->
+  <section class="hero" id="top">
+    <div class="hero__frame" id="heroFrame">
+      <div class="hero__slides" id="slides"></div>
+      <div class="hero__shade"></div>
+
+      <div class="hero__content">
+        <span class="hero__eyebrow eyebrow" id="heroEyebrow"><i class="dot" id="heroDot"></i><span id="heroEyebrowTxt">Funky Bakers · Open now</span></span>
+        <div class="hero__titles" id="heroTitles"></div>
+        <p class="hero__sub">Funky began its journey in Barcelona with one clear mission: to become your home away from home.</p>
+        <a class="hero__order" href="https://linktr.ee/funkyand.co" target="_blank" rel="noopener">
+          <svg class="pin" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
+          Hungry already? Order on Glovo
+          <b><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></b>
+        </a>
+        <a class="hero__more" href="#visit">See today’s hours</a>
+      </div>
+
+      <button class="hero__next" id="heroNext" aria-label="Next place">
+        <svg class="ring" viewBox="0 0 76 76" aria-hidden="true"><circle id="ring" cx="38" cy="38" r="35" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+      <div class="hero__tabs" role="tablist" id="heroTabs"></div>
+
+      <aside class="promo" id="promo">
+        <button class="promo__x" id="promoX" aria-label="Hide">×</button>
+        <svg class="promo__blob" viewBox="0 0 44 22" aria-hidden="true"><path fill="#fff" d="M4 11c0-6 6-9 11-7s8 1 12-1 13 0 13 7-6 10-12 8-9 0-13 1S4 17 4 11Z"/></svg>
+        <h3>Host Night Nº3: METL cooks Mexican</h3>
+        <p>Saturday 22 November, 20–23 h at the Eatery. A long table, 28 seats.</p>
+        <a class="btn" href="#host-nights">Grab a seat</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ============ Manifiesto ============ -->
+  <section class="manifesto pad wrap" id="manifesto">
+    <div class="floaters" aria-hidden="true">
+      <figure class="floater blob-1" style="left:3%;top:10%"><img src="assets/img/ig/DQb8lhejLzy-2.jpg" alt="" loading="lazy"></figure>
+      <figure class="floater blob-3" style="right:3%;top:8%"><img src="assets/img/ig/DXZA5k4E0i5-3.jpg" alt="" loading="lazy"></figure>
+      <figure class="floater blob-2" style="left:5%;bottom:6%"><img src="assets/img/ig/DPWlt-ojHW7-8.jpg" alt="" loading="lazy"></figure>
+      <figure class="floater blob-4" style="right:4%;bottom:10%"><img src="assets/img/ig/DRhYBOuDDKd-1.jpg" alt="" loading="lazy"></figure>
+    </div>
+    <p class="eyebrow" data-reveal>El Born · Eixample · Barcelona</p>
+    <h2 class="display manifesto__title" data-lines><span class="line"><span>Born to</span></span><span class="line"><span><span class="accent">gather.</span></span></span></h2>
+    <p class="manifesto__text" id="manifestoText">Funky is a bakery, an eatery and a deli run by bakers, cooks and friends. We bake every morning, set long tables at lunch, invite chefs over at night and keep the fridge full of good butter. Come as you are. Bring the dog.</p>
+  </section>
+
+  <!-- ============ Locales ============ -->
+  <section class="places" id="places">
+    <div class="wrap">
+      <div class="places__head">
+        <h2 class="display h2" data-lines><span class="line"><span>Three doors,</span></span><span class="line"><span>one <span class="accent">Funkyland</span></span></span></h2>
+        <p class="lead" data-reveal>Pick a door. The bakery in the Born, the eatery on Bailèn, the deli on Diputació: same people, same butter, different moods.</p>
+      </div>
+    </div>
+    <div class="places__pin" id="placesPin">
+      <div class="places__track wrap" id="placesTrack"></div>
+    </div>
+  </section>
+
+  <!-- ============ Del horno ============ -->
+  <section class="pad" id="oven-wrap">
+    <div class="oven" id="oven">
+      <div class="oven__stage" id="ovenStage">
+        <div class="oven__title">
+          <h2 class="display h2" data-lines><span class="line"><span>Fresh from</span></span><span class="line"><span>the oven</span></span></h2>
+          <p data-reveal>Everything you see was drawn by hand from the real thing. The real thing is in the Born, every morning from eight.</p>
+        </div>
+      </div>
+      <div class="oven__strip" id="ovenStrip" aria-label="Today at the bakery"></div>
+    </div>
+  </section>
+
+  <!-- ============ Tarta ============ -->
+  <section class="wrap pad" id="cakes" style="padding-top:0">
+    <div class="places__head">
+      <h2 class="display h2" data-lines><span class="line"><span>You design it.</span></span><span class="line"><span>We <span class="accent">bake</span> it.</span></span></h2>
+      <p class="lead" data-reveal>Our celebration cake: two layers of sponge, your cream, your topping and a message on top if you want one. Order 48 hours ahead.</p>
+    </div>
+    <div class="cake">
+      <div class="cake__stage" id="cakeStage">
+        <span class="cake__badge" id="cakeServes">Serves 16–20</span>
+        <svg id="cakeSvg" viewBox="0 0 400 400" role="img" aria-label="Preview of your cake"></svg>
+        <div class="cake__price"><small>Your cake</small><b id="cakePrice">55 €</b></div>
+      </div>
+      <div class="cake__steps" id="cakeSteps"></div>
+    </div>
+  </section>
+
+  <!-- ============ Host Nights ============ -->
+  <section class="hosts pad" id="host-nights">
+    <div class="wrap">
+      <p class="eyebrow" data-reveal style="color:var(--yolk)">Host Nights</p>
+      <h2 class="display h2" data-lines><span class="line"><span>Our kitchen,</span></span><span class="line"><span>their <span class="accent">menu</span></span></span></h2>
+      <p class="lead" data-reveal style="margin-top:20px">A couple of times a season we hand the Eatery to a chef we love. Long tables, natural wine, two nights only.</p>
+      <div class="hosts__next" id="hostNext"></div>
+      <div class="hosts__past" id="hostPast"></div>
+    </div>
+  </section>
+
+  <!-- ============ Visitanos ============ -->
+  <section class="wrap pad" id="visit">
+    <div class="places__head">
+      <h2 class="display h2" data-lines><span class="line"><span>Come say <span class="accent">hi</span></span></span></h2>
+      <p class="lead" data-reveal>Live hours, in Barcelona time. Tap a place to find it on the map.</p>
+    </div>
+    <div class="visit">
+      <div class="map" id="map" data-reveal></div>
+      <div class="vlist" id="vlist"></div>
+    </div>
+  </section>
+
+  <!-- ============ Muro ============ -->
+  <section class="wall" id="wall" aria-label="Funkyland on Instagram">
+    <div class="wrap places__head">
+      <h2 class="display h3" data-lines><span class="line"><span>Your weekly scroll through Funkyland</span></span></h2>
+      <a class="btn btn--ghost" href="https://www.instagram.com/funkyand.co/" target="_blank" rel="noopener">@funkyand.co</a>
+    </div>
+    <div class="wall__row" id="wallA"></div>
+    <div class="wall__row" id="wallB"></div>
+  </section>
+</main>
+
+<div id="footer"></div>
+
+<!-- Modal de reserva -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal__bg" data-close></div>
+  <div class="modal__card" id="modalCard" data-lenis-prevent></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="js/data.js?v=1"></script>
+<script src="js/funky.js?v=1"></script>
+<script src="js/home.js?v=1"></script>
+<script src="js/cake.js?v=1"></script>
+</body>
+</html>
