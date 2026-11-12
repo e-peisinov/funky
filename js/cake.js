@@ -134,18 +134,18 @@
   const opt = (group, id, label, extra = '', sw = '') => `<button class="opt" aria-pressed="${state[group] == id}" data-g="${group}" data-v="${id}">${sw ? `<span class="sw" style="background:${sw}"></span>` : ''}<span>${label}${extra ? `<small>${extra}</small>` : ''}</span></button>`;
   const min = new Date(Date.now() + 2 * 864e5).toISOString().slice(0, 10);
   steps.innerHTML = `
-    <div data-reveal><div class="step__head"><b>01</b><h3>Size</h3></div><div class="opts">${C.sizes.map((s) => opt('size', s.id, s.label, `${s.serves} · ${s.p} €`)).join('')}</div></div>
-    <div data-reveal><div class="step__head"><b>02</b><h3>Sponge</h3></div><div class="opts">${C.sponges.map((s) => opt('sponge', s.id, s.label, '', s.col)).join('')}</div></div>
-    <div data-reveal><div class="step__head"><b>03</b><h3>Cream</h3></div><div class="opts">${C.creams.map((s) => opt('cream', s.id, s.label, '', s.col)).join('')}</div></div>
-    <div data-reveal><div class="step__head"><b>04</b><h3>Topping</h3></div><div class="opts">${C.toppings.map((s) => opt('topping', s.id, s.label)).join('')}</div></div>
-    <div data-reveal><div class="step__head"><b>05</b><h3>The details</h3></div>
+    <div><div class="step__head"><b>01</b><h3>Size</h3></div><div class="opts">${C.sizes.map((s) => opt('size', s.id, s.label, `${s.serves} · ${s.p} €`)).join('')}</div></div>
+    <div><div class="step__head"><b>02</b><h3>Sponge</h3></div><div class="opts">${C.sponges.map((s) => opt('sponge', s.id, s.label, '', s.col)).join('')}</div></div>
+    <div><div class="step__head"><b>03</b><h3>Cream</h3></div><div class="opts">${C.creams.map((s) => opt('cream', s.id, s.label, '', s.col)).join('')}</div></div>
+    <div><div class="step__head"><b>04</b><h3>Topping</h3></div><div class="opts">${C.toppings.map((s) => opt('topping', s.id, s.label)).join('')}</div></div>
+    <div><div class="step__head"><b>05</b><h3>The details</h3></div>
       <div style="display:grid;gap:14px;grid-template-columns:1fr 1fr">
         <label class="field" style="grid-column:1/-1">Message on a topper (optional)<input id="cakeMsg" maxlength="22" placeholder="Happy birthday, Lu!"></label>
         <label class="field">Pick up at<select id="cakeWhere">${['bakers', 'eatery', 'deli'].map((k) => `<option value="${k}">${F.places[k].name}</option>`).join('')}</select></label>
         <label class="field">Day<input id="cakeDate" type="date" min="${min}" value="${min}"></label>
       </div>
     </div>
-    <div data-reveal style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+    <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
       <button class="btn btn--coral" id="cakeGo">Request this cake ${F.arrow}</button>
       <span class="note">The bakers confirm by email within a day.</span>
     </div>`;
@@ -213,5 +213,5 @@
     });
   });
 
-  F.reveal(steps);
+
 })();

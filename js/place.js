@@ -67,9 +67,9 @@
     <div class="menu__head">
       <div>
         <h2 class="display h2" data-lines>${copy.menuTitle.map((l) => `<span class="line"><span>${l}</span></span>`).join('')}</h2>
-        <p class="lead" data-reveal style="margin-top:16px">${copy.menuLead}</p>
+        <p class="lead" style="margin-top:16px">${copy.menuLead}</p>
       </div>
-      <div class="filters" role="toolbar" aria-label="Filter" id="filters" data-reveal>
+      <div class="filters" role="toolbar" aria-label="Filter" id="filters">
         ${copy.cats.map(([id, label], i) => `<button class="chip" aria-pressed="${i === 0}" data-c="${id}">${label}</button>`).join('')}
       </div>
     </div>
@@ -117,7 +117,6 @@
   const list = (c) => copy.items.map((it, i) => [it, i]).filter(([it]) => c === 'all' || it.c === c);
   const paint = () => { grid.innerHTML = list(current).map(([it, i]) => card(it, i)).join(''); };
   paint();
-  gsap.from(grid.querySelectorAll('.mcard__inner'), { y: 50, opacity: 0, duration: 1, stagger: 0.05, scrollTrigger: { trigger: grid, start: 'top 85%', once: true } });
 
   let swapping = false;
   $('#filters').addEventListener('click', (e) => {

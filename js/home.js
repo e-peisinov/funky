@@ -156,9 +156,6 @@
       gsap.fromTo(img, { xPercent: -6 * amp, scale: 1.14 }, { xPercent: 6 * amp, scale: 1.14, ease: 'none', scrollTrigger: { trigger: img.closest('.place'), containerAnimation: scene, start: 'left right', end: 'right left', scrub: true } });
     });
   });
-  mm.add('(max-width: 860px)', () => {
-    track.querySelectorAll('.place').forEach((el) => gsap.from(el, { y: 50, opacity: 0, duration: 1.1, scrollTrigger: { trigger: el, start: 'top 88%', once: true } }));
-  });
 
   /* =================== DEL HORNO =================== */
   const stage = $('#ovenStage');
@@ -203,7 +200,7 @@
   const myBookings = () => { try { return JSON.parse(localStorage.getItem('fk-bookings') || '[]'); } catch (e) { return []; } };
   const seatsLeft = () => Math.max(0, H.seats - SOLD_DEMO - myBookings().reduce((s, b) => s + b.seats, 0));
   $('#hostNext').innerHTML = `
-    <div class="poster" data-reveal><img src="${F.ilus(H.poster)}" alt="Host Nights poster: ${H.title}, ${H.who}" loading="lazy"></div>
+    <div class="poster"><img src="${F.ilus(H.poster)}" alt="Host Nights poster: ${H.title}, ${H.who}" loading="lazy"></div>
     <div>
       <p class="eyebrow" style="color:var(--yolk)">Next · Host Night ${H.nro}</p>
       <h3 class="display h2" style="margin-top:12px">${H.title}</h3>
@@ -229,8 +226,18 @@
   ScrollTrigger.create({ trigger: '#hostNext', start: 'top 75%', once: true, onEnter: () => paintSeats(true) });
   paintSeats(false);
   gsap.set('#seatBar', { scaleX: 0 });
-  $('#hostPast').innerHTML = F.hostNights.past.map((h) => `<article class="past"><div class="poster"><img src="${F.ilus(h.poster)}" alt="Host Nights poster: ${h.title}" loading="lazy"></div><h4>${h.title}</h4><p>${h.who} · ${h.when}</p></article>`).join('');
-  gsap.from('#hostPast .past', { y: 60, opacity: 0, stagger: 0.12, duration: 1.1, scrollTrigger: { trigger: '#hostPast', start: 'top 85%', once: true } });
+  // Noches anteriores: archivo en lista; en escritorio el póster sigue al cursor
+  $('#hostPast').innerHTML = `<p class="eyebrow archive__label">Past nights</p><ul class="archive">${F.hostNights.past.map((h) => `
+    <li class="archive__row" data-src="${F.ilus(h.poster)}"><img class="archive__thumb" src="${F.ilus(h.poster)}" alt="" loading="lazy"><span class="archive__t">${h.title}</span><span class="archive__who">${h.who}</span><span class="archive__when">${h.when}</span></li>`).join('')}</ul>
+    <img class="archive__peek" id="peek" alt="" aria-hidden="true">`;
+  if (F.desk && !F.suave) {
+    const peek = $('#peek'), box = $('#hostPast');
+    const px = gsap.quickTo(peek, 'x', { duration: 0.6, ease: 'power3.out' }), py = gsap.quickTo(peek, 'y', { duration: 0.6, ease: 'power3.out' });
+    gsap.set(peek, { xPercent: -50, yPercent: -50, scale: 0.85, opacity: 0, rotation: -4 });
+    box.addEventListener('pointermove', (e) => { const r = box.getBoundingClientRect(); px(e.clientX - r.left); py(e.clientY - r.top); });
+    box.querySelectorAll('.archive__row').forEach((row) => row.addEventListener('pointerenter', () => { peek.src = row.dataset.src; gsap.to(peek, { opacity: 1, scale: 1, rotation: 3, duration: 0.5, ease: 'power2.inOut' }); }));
+    box.querySelector('.archive').addEventListener('pointerleave', () => gsap.to(peek, { opacity: 0, scale: 0.85, rotation: -4, duration: 0.5, ease: 'power2.inOut' }));
+  }
 
   // Modal de reserva (simulada)
   const modal = $('#modal'), card = $('#modalCard');
