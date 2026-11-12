@@ -229,7 +229,7 @@
   // Noches anteriores: archivo en lista; en escritorio el póster sigue al cursor
   $('#hostPast').innerHTML = `<p class="eyebrow archive__label">Past nights</p><ul class="archive">${F.hostNights.past.map((h) => `
     <li class="archive__row" data-src="${F.ilus(h.poster)}"><img class="archive__thumb" src="${F.ilus(h.poster)}" alt="" loading="lazy"><span class="archive__t">${h.title}</span><span class="archive__who">${h.who}</span><span class="archive__when">${h.when}</span></li>`).join('')}</ul>
-    <img class="archive__peek" id="peek" alt="" aria-hidden="true">`;
+    <img class="archive__peek" id="peek" src="${F.ilus(F.hostNights.past[0].poster)}" alt="" aria-hidden="true" loading="lazy">`;
   if (F.desk && !F.suave) {
     const peek = $('#peek'), box = $('#hostPast');
     const px = gsap.quickTo(peek, 'x', { duration: 0.6, ease: 'power3.out' }), py = gsap.quickTo(peek, 'y', { duration: 0.6, ease: 'power3.out' });
